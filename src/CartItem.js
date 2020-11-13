@@ -12,8 +12,28 @@ class CartItem extends React.Component{
     }
 
     increaseQuantity = () => {
-        console.log('this.state', this.state);
+        // this.setState({
+        //     qty:this.state.qty + 1
+        // });
+
+        this.setState((prevState) => {
+            return{
+                qty:prevState.qty+1
+            } 
+        });
     }
+
+    decreaseQuantity = () => {
+        this.setState((prevState) => {
+            if(prevState.qty===0){
+                return
+            }else return{
+                qty:prevState.qty-1
+            }
+            
+        });
+    }
+
     render(){
         const{price, title, qty} = this.state;
         return(
@@ -37,6 +57,7 @@ class CartItem extends React.Component{
                         alt="decrease" 
                         className="action-icons" 
                         src= "https://www.flaticon.com/svg/static/icons/svg/659/659892.svg"
+                        onClick = {this.decreaseQuantity}
                         />
                         <img 
                         alt="delete" 
