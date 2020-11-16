@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import CartItem from './CartItem'
 
 class Cart extends React.Component{
@@ -50,7 +50,7 @@ class Cart extends React.Component{
     handleDeleteProduct =(id) => {
         const{products} = this.state;
         const items = products.filter((item) => item.id !== id);
-        this.setState({products:items})
+        this.setState({products:items});
     }
     render(){
         const {products} = this.state;
