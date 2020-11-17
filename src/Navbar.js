@@ -1,12 +1,11 @@
-import { findByLabelText } from '@testing-library/react';
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return(
         <div style={styles.nav}>
             <div style={styles.cartIconContainer}>
                 <img style={styles.cartIcon} src="https://www.flaticon.com/svg/static/icons/svg/711/711897.svg" alt="cart-icon"/>
-                <span style= {styles.cartCount}>3</span>
+                <span style= {styles.cartCount}>{props.count}</span>
             </div>
         </div>
     );
